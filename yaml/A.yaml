@@ -68,26 +68,26 @@ proxies:
 
 
 proxy-groups:
-  - name: Proxy
+  - name: 代理
     type: select
     # proxies引用别的组或者配置在文件内proxies的节点
     proxies:
-      - 香港节点
-      - 新加坡节点
-      - 日本节点
-      - 美国节点
-      - 其他地区
+      - 香港
+      - 星城
+      - 日本
+      - 美国
+      - 其他
       # 如有配置proxies部分可按如下格式使用配置文件内自定义的节点(非订阅节点)
       # - ss1
 
-  - name: Telegram
+  - name: 电报
     type: select
     proxies:
-      - 香港节点
-      - 新加坡节点
-      - 日本节点
-      - 美国节点
-      - 其他地区
+      - 香港
+      - 狮城
+      - 日本
+      - 美国
+      - 其他
 
   - name: 广告
     type: select
@@ -95,7 +95,7 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-  - name: 香港节点
+  - name: 香港
     type: select
     use:
       - Sub1
@@ -105,7 +105,7 @@ proxy-groups:
     # filter使用正则表达式去筛选节点
     filter: "HK|Hong|香港|港|急速"
 
-  - name: 新加坡节点
+  - name: 星城
     type: select
     use:
       - Sub1
@@ -113,7 +113,7 @@ proxy-groups:
       # - Sub3
     filter: "SG|Singapore|狮城"
 
-  - name: 日本节点
+  - name: 日本
     type: select
     use:
       - Sub1
@@ -121,7 +121,7 @@ proxy-groups:
       # - Sub3
     filter: "JP|japan|日本"
 
-  - name: 美国节点
+  - name: 美国
     type: select
     use:
       - Sub1
@@ -129,7 +129,7 @@ proxy-groups:
       # - Sub3
     filter: "US|United|美|美国"
   
-  - name: 其他地区
+  - name: 其他
     type: select
     use:
       - Sub1
@@ -269,7 +269,7 @@ rules:
   - RULE-SET,direct,DIRECT
   - RULE-SET,lancidr,DIRECT
   - RULE-SET,cncidr,DIRECT
-  - RULE-SET,telegramcidr,Telegram
+  - RULE-SET,telegramcidr,电报
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,Proxy
